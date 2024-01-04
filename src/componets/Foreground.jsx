@@ -44,10 +44,15 @@ function Foreground() {
     );
 
     const onSubmit = () => {
-        console.log("haha" + details)
+        console.log(details)
         setCardDetails([...cardDetails, details])
         console.log(cardDetails)
     }
+
+    const onDelete = (indexToDelete) => {
+        const updatedCards = cardDetails.filter((_, index) => index !== indexToDelete);
+        setCardDetails(updatedCards);
+      };
 
   return (
     <>
@@ -64,11 +69,11 @@ function Foreground() {
             <label>
                 Pick a Type:
                 <select name="type" 
-                        defaultValue="checkbox"
+                        defaultValue="note"
                         value={details.type}
                         onChange={(e) => setDetails({...details, type: e.target.value})}>
-                  <option value="checkbox">Checkbox</option>
                   <option value="note">Note</option>
+                  <option value="checkbox">Checkbox</option>
                   <option value="link">Link</option>
                 </select>
             </label>
@@ -85,21 +90,23 @@ function Foreground() {
                    onChange={(e) => setDetails({...details, tagTitle: e.target.value})} 
             />
 
-            <label htmlFor="color">Choose a tag Color: </label>
-            <select id="color" 
-                    name="color"
-                    value={details.tagColor}
-                    onChange={(e) => setDetails({...details, tagColor: e.target.value})}>
-                    <option value="Red">Red</option>
-                    <option value="Green">Green</option>
-                    <option value="Blue">Blue</option>
-            </select>
+            <label>
+                Pick a Tag color:
+                <select name="color" 
+                        defaultValue="green"
+                        value={details.tagColor}
+                        onChange={(e) => setDetails({...details, tagColor: e.target.value})}>
+                  <option value="red">Red</option>
+                  <option value="green">Green</option>
+                  <option value="blue">Blue</option>
+                </select>
+            </label>
             
         </div>
 
         <div ref={ref} className='z-[20] w-full h-full flex gap-10 flex-wrap p-5 mt-[4rem]'>
             {cardDetails.map((item, index) => (
-                <Card data={item} refrence={ref}/>
+                <Card key={index} data={item} refrence={ref} onDelete={() => onDelete(index)}/>
             ))}
         </div>
     </>
