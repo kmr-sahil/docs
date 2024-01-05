@@ -67,27 +67,26 @@ function Foreground() {
   return (
     <>
 
-        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-sm bg-slate-300 bg-opacity-60 flex justify-between items-center gap-[0.5rem] transition-all p-[0.5rem] flex-wrap'>
+        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-sm bg-slate-300 bg-opacity-60 flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap'>
             
-            
-            <input className='w-[80%] rounded-md p-[0.5rem] outline-slate-600 outline-2'
+            <input className='w-[80%] rounded-md p-[0.5rem] tablet:p-[0.75rem] outline-slate-600 outline-2'
                     placeholder='add files or todo'
                     value={details.title}
                     onChange={(e) => setDetails({...details, title: e.target.value})}
                     onClick={toggleHiddenDiv}
                     onBlur={hideHiddenDiv}
                     />
-            <button onClick={onSubmit} className='w-[15%] h-[40px] flex-grow rounded-md bg-white'>Add</button>
+            <button onClick={onSubmit} className='w-[15%] p-[0.5rem] tablet:p-[0.75rem] flex-grow rounded-md bg-white'>Add</button>
             
-            <div className={`flex flex-wrap gap-[0.5rem] transition-all ease-in-out overflow-hidden ${
+            <div className={`flex flex-wrap gap-[0.5rem] tablet:gap-[1rem] transition-all ease-in-out overflow-hidden ${
                             showHiddenDiv ? 'h-auto max-h-[500px] opacity-100' : 'max-h-[0] opacity-0 pointer-events-none'
                                 }`}
                             style={{ transitionProperty: 'max-height, opacity', transitionDuration: '0.8s' }}
                             ref={hiddenDivRef}
             >
                    
-                    <label className='bg-slate-500 p-[0.5rem] w-[100%] flex rounded-md'>
-                        Pick the Card Type :  
+                    <label className='bg-slate-500 p-[0.5rem] tablet:p-[0.75rem] w-[100%] flex rounded-md gap-2'>
+                        Pick a Card Type :  
                         <select 
                                 className='flex-grow rounded-sm'
                                 name="type" 
@@ -100,7 +99,7 @@ function Foreground() {
                         </select>
                     </label>
 
-                    <textarea   className='w-[100%] rounded-md p-[0.25rem]'
+                    <textarea   className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
                                 name="message" 
                                 rows="2" 
                                 placeholder='your description...'
@@ -109,14 +108,14 @@ function Foreground() {
                     />
 
 
-                    <input className='w-[100%] rounded-md p-[0.25rem]'
+                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
                            placeholder='tagTitle'
                            value={details.tagTitle}
                            onChange={(e) => setDetails({...details, tagTitle: e.target.value})} 
                     />
 
-                    <label className='bg-slate-500 p-[0.5rem] w-[100%] flex rounded-md'>
-                        Pick Tag color for Card :
+                    <label className='bg-slate-500 p-[0.5rem] tablet:p-[0.75rem] gap-2 w-[100%] flex rounded-md'>
+                        Pick a Tag color :
                         <select className='flex-grow rounded-sm'
                                 name="color" 
                                 defaultValue="green"
@@ -128,7 +127,7 @@ function Foreground() {
                         </select>
                     </label>
 
-                    <input className='w-[100%] rounded-md p-[0.25rem]'
+                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
                            placeholder='add your link'
                            value={details.link}
                            onChange={(e) => setDetails({...details, link: e.target.value})} 
