@@ -37,9 +37,9 @@ function Foreground() {
     }
 
     const onDelete = (indexToDelete) => {
-        console.log("here"+indexToDelete);
-        const updatedCards = cardDetails.filter((_, index) => index !== indexToDelete);
-        setCardDetails(updatedCards);
+          const updatedCards = cardDetails.filter((_, index) => index !== indexToDelete);
+          setCardDetails(updatedCards);
+          localStorage.setItem('cardDetails', JSON.stringify(updatedCards));
       };
 
       useEffect(() => {
@@ -54,6 +54,11 @@ function Foreground() {
       };
 
       const hideHiddenDiv = () => {
+
+        if (e.relatedTarget && ref.current.contains(e.relatedTarget)) {
+          return;
+        }
+
         setShowHiddenDiv(false);
       };
 
@@ -75,6 +80,7 @@ function Foreground() {
                             showHiddenDiv ? 'h-auto max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
                                 }`}
                             style={{ transitionProperty: 'max-height, opacity', transitionDuration: '1s' }}
+                            ref={ref}
             >
                     <label>
                         Pick a Type:
