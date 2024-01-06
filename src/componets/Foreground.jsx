@@ -68,7 +68,7 @@ function Foreground() {
         <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-sm bg-slate-300 bg-opacity-60 flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap'>
             
             <input className='w-[80%] rounded-md p-[0.5rem] tablet:p-[0.75rem] outline-slate-600 outline-2'
-                    placeholder='add files or todo'
+                    placeholder='add Title'
                     value={details.title}
                     onChange={(e) => setDetails({...details, title: e.target.value})}
                     onClick={toggleHiddenDiv}
@@ -107,14 +107,14 @@ function Foreground() {
 
 
                     <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
-                           placeholder='tagTitle'
+                           placeholder='add tag line or deadline or anything...'
                            value={details.tagTitle}
                            onChange={(e) => setDetails({...details, tagTitle: e.target.value})} 
                     />
 
 
                     <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
-                           placeholder='add your link'
+                           placeholder='add the link - https://..'
                            value={details.link}
                            onChange={(e) => setDetails({...details, link: e.target.value})} 
                     />

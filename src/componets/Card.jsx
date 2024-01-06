@@ -1,7 +1,6 @@
 import React from 'react'
-import { FaRegFileAlt } from "react-icons/fa";
-import { LuDownload } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
+import { IoLinkOutline } from "react-icons/io5";
 import { motion } from "framer-motion"
 
 function Card({data, refrence, onDelete}) {
@@ -27,10 +26,12 @@ function Card({data, refrence, onDelete}) {
       </div>
         
 
-        <div className='footer bottom-0 w-full left-0'>
+        <div className='footer w-full'>
             
-              <div className={`tag w-full py-4 ${data?.type === "link" ? "bg-blue-600" : `${data?.type === "checkbox" ? "bg-red-600" : "bg-green-600"}` } flex items-center justify-center`}>
-                  {data.type == "link" ? (<a href={data.link}>{data?.tagTitle}</a>) : 
+              <div className={`tag w-full px-8 py-4 ${data?.type === "link" ? "bg-blue-600" : `${data?.type === "checkbox" ? "bg-red-600" : "bg-green-600"}` } flex items-center justify-center`}>
+                  {data.type == "link" ? (<a target='_blank' href={data.link} className='flex gap-1 items-center justify-start'>
+                                              <IoLinkOutline />{data?.tagTitle}
+                                          </a>) : 
                       (<h3 className='text-sm'>{data?.tagTitle}</h3>)}
 
               </div>
