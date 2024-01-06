@@ -123,7 +123,7 @@ function Foreground() {
             
         </div>
 
-        <div ref={ref} className='z-[20] w-full h-screen flex gap-10 flex-wrap p-5 mt-[4rem]'>
+        <div ref={ref} className='z-[20] w-full h-screen flex gap-2 flex-wrap pt-20 p-5'>
             {cardDetails.map((item, index) => (
                 <Card key={index} data={item} refrence={ref} onDelete={() => onDelete(index)}/>
             ))}
