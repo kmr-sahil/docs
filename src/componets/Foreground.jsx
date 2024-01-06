@@ -40,6 +40,13 @@ function Foreground() {
           const updatedCards = cardDetails.filter((_, index) => index !== indexToDelete);
           setCardDetails(updatedCards);
           localStorage.setItem('cardDetails', JSON.stringify(updatedCards));
+
+          // Get the title of the card being deleted
+          const deletedCardTitle = "done_"+cardDetails[indexToDelete].title;
+
+          // Remove the 'done' state associated with the deleted card from local storage
+          console.log(deletedCardTitle)
+          localStorage.removeItem(deletedCardTitle);
       };
 
       useEffect(() => {

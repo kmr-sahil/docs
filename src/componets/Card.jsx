@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { IoClose } from "react-icons/io5";
 import { IoLinkOutline } from "react-icons/io5";
 import { motion } from "framer-motion"
@@ -6,6 +6,21 @@ import { motion } from "framer-motion"
 function Card({data, refrence, onDelete}) {
 
   const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    // Retrieve the 'done' state from localStorage during component initialization
+    const storedDone = localStorage.getItem(`done_${data.title}`);
+    if (storedDone) {
+      setDone(JSON.parse(storedDone));
+    }
+  }, [data.title]);
+
+  const handleDoneChange = () => {
+    // Toggle 'done' state and store in localStorage
+    setDone(!done);
+    localStorage.setItem(`done_${data.title}`, JSON.stringify(!done));
+  };
+
     
   return (
     <motion.div drag 
@@ -20,7 +35,9 @@ function Card({data, refrence, onDelete}) {
           <div className='flex gap-2'>
                 {data.type == "checkbox" ? (<input className='w-[16px] bg-slate-500' 
                                                    type="checkbox" 
-                                                   onClick={() => setDone(!done)}
+                                                   
+                                                   checked={done}
+                                                   onClick={handleDoneChange}
                                                    />) : null}
                 <h1 className={`text-[1rem] tablet:text-[1.15rem] tablet-lg:text-[1.25rem] ${done == true ? "line-through" : ""} font-bold`}>{data?.title}</h1>
           </div>
