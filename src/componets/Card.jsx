@@ -29,7 +29,7 @@ function Card({data, refrence, onDelete}) {
 
         <div className='footer bottom-0 w-full left-0'>
             
-              <div className={`tag w-full py-4 ${data?.tagColor === "blue" ? "bg-blue-600" : `${data?.tagColor === "green" ? "bg-green-600" : "bg-red-600"}` } flex items-center justify-center`}>
+              <div className={`tag w-full py-4 ${data?.type === "link" ? "bg-blue-600" : `${data?.type === "checkbox" ? "bg-red-600" : "bg-green-600"}` } flex items-center justify-center`}>
                   {data.type == "link" ? (<a href={data.link}>{data?.tagTitle}</a>) : 
                       (<h3 className='text-sm'>{data?.tagTitle}</h3>)}
 

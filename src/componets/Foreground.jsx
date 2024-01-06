@@ -11,9 +11,8 @@ function Foreground() {
             type: "",
             title: "",
             desc: "",
-            tagColor : "",
             tagTitle: "",
-            link: "",
+            link: '',
     })
 
 
@@ -32,7 +31,6 @@ function Foreground() {
           type: '',
           title: '',
           desc: '',
-          tagColor: '',
           tagTitle: '',
           link: '',
         });
@@ -114,18 +112,6 @@ function Foreground() {
                            onChange={(e) => setDetails({...details, tagTitle: e.target.value})} 
                     />
 
-                    <label className='bg-slate-500 p-[0.5rem] tablet:p-[0.75rem] gap-2 w-[100%] flex rounded-md'>
-                        Pick a Tag color :
-                        <select className='flex-grow rounded-sm'
-                                name="color" 
-                                defaultValue="green"
-                                value={details.tagColor}
-                                onChange={(e) => setDetails({...details, tagColor: e.target.value})}>
-                          <option value="red">Red</option>
-                          <option value="green">Green</option>
-                          <option value="blue">Blue</option>
-                        </select>
-                    </label>
 
                     <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
                            placeholder='add your link'
