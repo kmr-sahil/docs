@@ -72,7 +72,7 @@ function Foreground() {
   return (
     <>
 
-        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-[40px] bg-black bg-opacity-[0.1] flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap text-white'>
+        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-[40px] bg-black bg-opacity-[0.1] flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap text-white border-[2px] border-[#ffffff0c]'>
             
             <input className='w-[80%] rounded-md p-[0.5rem] tablet:p-[0.75rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
                     placeholder='add Title'
@@ -81,7 +81,7 @@ function Foreground() {
                     onClick={toggleHiddenDiv}
                     onBlur={hideHiddenDiv}
                     />
-            <button onClick={onSubmit} className='w-[15%] p-[0.5rem] tablet:p-[0.75rem] flex-grow rounded-md bg-white bg-opacity-[0.2]'>Add</button>
+            <button onClick={onSubmit} className='w-[15%] p-[0.5rem] tablet:p-[0.75rem] flex-grow rounded-md bg-white bg-opacity-[0.2] text-[#ffffff9c]'>Add</button>
             
             <div className={`flex flex-wrap gap-[0.5rem] tablet:gap-[1rem] transition-all ease-in-out overflow-hidden ${
                             showHiddenDiv ? 'h-auto max-h-[500px] opacity-100' : 'max-h-[0] opacity-0 pointer-events-none'
