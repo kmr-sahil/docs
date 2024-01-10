@@ -72,16 +72,16 @@ function Foreground() {
   return (
     <>
 
-        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-sm bg-slate-300 bg-opacity-60 flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap'>
+        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-[40px] bg-black bg-opacity-[0.1] flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap text-white'>
             
-            <input className='w-[80%] rounded-md p-[0.5rem] tablet:p-[0.75rem] outline-slate-600 outline-2'
+            <input className='w-[80%] rounded-md p-[0.5rem] tablet:p-[0.75rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
                     placeholder='add Title'
                     value={details.title}
                     onChange={(e) => setDetails({...details, title: e.target.value})}
                     onClick={toggleHiddenDiv}
                     onBlur={hideHiddenDiv}
                     />
-            <button onClick={onSubmit} className='w-[15%] p-[0.5rem] tablet:p-[0.75rem] flex-grow rounded-md bg-white'>Add</button>
+            <button onClick={onSubmit} className='w-[15%] p-[0.5rem] tablet:p-[0.75rem] flex-grow rounded-md bg-white bg-opacity-[0.2]'>Add</button>
             
             <div className={`flex flex-wrap gap-[0.5rem] tablet:gap-[1rem] transition-all ease-in-out overflow-hidden ${
                             showHiddenDiv ? 'h-auto max-h-[500px] opacity-100' : 'max-h-[0] opacity-0 pointer-events-none'
@@ -90,21 +90,21 @@ function Foreground() {
                             ref={hiddenDivRef}
             >
                    
-                    <label className='bg-slate-500 p-[0.5rem] tablet:p-[0.75rem] w-[100%] flex rounded-md gap-2'>
+                    <label className='bg-white bg-opacity-[0.2] px-[0.5rem] h-[40px] tablet:h-[48px] w-[100%] flex items-center rounded-md gap-2 text-[#ffffff9c]'>
                         Pick a Card Type :  
                         <select 
-                                className='flex-grow rounded-sm'
+                                className='min-w-[60px] flex-grow h-[64%] bg-white bg-opacity-[0.2] rounded-md px-[0.5rem] border-r-8 border-r-transparent'
                                 name="type" 
                                 defaultValue="note"
                                 value={details.type}
                                 onChange={(e) => setDetails({...details, type: e.target.value})}>
-                          <option value="note">Note</option>
-                          <option value="checkbox">Checkbox</option>
-                          <option value="link">Link</option>
+                          <option className="text-black" value="note">Note</option>
+                          <option className="text-black" value="checkbox">Checkbox</option>
+                          <option className="text-black" value="link">Link</option>
                         </select>
                     </label>
 
-                    <textarea   className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
+                    <textarea   className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
                                 name="message" 
                                 rows="2" 
                                 placeholder='your description...'
@@ -113,14 +113,14 @@ function Foreground() {
                     />
 
 
-                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
+                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
                            placeholder='add tag line or deadline or anything...'
                            value={details.tagTitle}
                            onChange={(e) => setDetails({...details, tagTitle: e.target.value})} 
                     />
 
 
-                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem]'
+                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
                            placeholder='add the link - https://..'
                            value={details.link}
                            onChange={(e) => setDetails({...details, link: e.target.value})} 
