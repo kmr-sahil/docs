@@ -21,6 +21,8 @@ function Card({data, refrence, onDelete}) {
     localStorage.setItem(`done_${data.title}`, JSON.stringify(!done));
   };
 
+  const linkValue = data.link.startsWith('https://') ? data.link : `https://${data.link}`;
+
     
   return (
     <motion.div drag 
@@ -49,7 +51,7 @@ function Card({data, refrence, onDelete}) {
         {(data?.tagTitle || data?.link) && (<div className='footer w-full'>
             
               <div className={`tag w-full px-8 py-4 bg-opacity-[90%] ${data?.type === "link" ? "bg-blue-600" : `${data?.type === "checkbox" ? "bg-red-600" : "bg-green-600"} `} flex items-center justify-center`}>
-                  {data.type == "link" ? (<a target='_blank' href={data.link} className='flex gap-1 items-center justify-start'>
+                  {data.type == "link" ? (<a target='_blank' href={linkValue} className='flex gap-1 items-center justify-start'>
                                               <IoLinkOutline />{data?.tagTitle}
                                           </a>) : 
                       (<h3 className='text-sm'>{data?.tagTitle}</h3>)}
