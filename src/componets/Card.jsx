@@ -28,7 +28,7 @@ function Card({data, refrence, onDelete}) {
         whileDrag={{scale: 1.1}} 
         dragElastic={0.2} 
         dragTransition={{bounceStiffness: 100, bounceDamping:30}}
-        className={`relative w-60 h-min ${done == true ? "brightness-50" : ""} rounded-[30px] bg-zinc-900/80 backdrop-blur-md text-white overflow-hidden`}>
+        className={`relative w-60 h-min ${done == true ? "brightness-50" : ""} rounded-[30px] bg-zinc-900/80 backdrop-blur-md text-white overflow-hidden border-[2px] border-[#ffffff0c]`}>
 
       <div className='px-5 pt-5 pb-8 flex flex-col gap-2'>
           <button className='self-end text-[#ffffffb8]' onClick={onDelete}><IoClose/></button>

@@ -72,7 +72,7 @@ function Foreground() {
   return (
     <>
 
-        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-lg text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-[40px] bg-black bg-opacity-[0.1] flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap text-white border-[2px] border-[#ffffff0c]'>
+        <div className='w-[80%] tablet:w-[70%] tablet-lg:w-[50%] laptop:w-[40%] rounded-[14px] tablet:rounded-[16px] text-[1rem] mx-auto z-[30] fixed top-6 left-1/2 -translate-x-[50%] backdrop-blur-[40px] bg-black bg-opacity-[0.1] flex justify-between items-center gap-[0.5rem] tablet:gap-[1rem] transition-all p-[0.5rem] tablet:p-[1rem] flex-wrap text-white border-[2px] border-[#ffffff0c]'>
             
             <input className='w-[80%] rounded-md p-[0.5rem] tablet:p-[0.75rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
                     placeholder='add Title'
@@ -120,10 +120,11 @@ function Foreground() {
                     />
 
 
-                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c]'
+                    <input className='w-[100%] rounded-md p-[0.25rem] tablet:p-[0.5rem] bg-white bg-opacity-[0.2] placeholder:text-[#ffffff9c] disabled:opacity-[0.2] transition-opacity duration-300'
                            placeholder='add the link - https://..'
                            value={details.link}
-                           onChange={(e) => setDetails({...details, link: e.target.value})} 
+                           onChange={(e) => setDetails({...details, link: e.target.value})}
+                           disabled={details.type !== 'link'} 
                     />
             </div>
             
