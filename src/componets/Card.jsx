@@ -41,10 +41,10 @@ function Card({data, refrence, onDelete}) {
                                                    checked={done}
                                                    onClick={handleDoneChange}
                                                    />) : null}
-                <h1 className={`text-[1rem] tablet:text-[1.15rem] tablet-lg:text-[1.25rem] ${done == true ? "line-through" : ""} font-bold text-[#ffffffd2]`}>{data?.title}</h1>
+                <h1 className={`text-[1rem] tablet:text-[1.15rem] tablet-lg:text-[1.25rem] ${done == true ? "line-through" : ""} font-bold text-[#ffffffd2] tracking-wide`}>{data?.title}</h1>
           </div>
 
-          <p className='text-[0.75rem] tablet:text-[0.8rem] tablet-lg:text-[0.85rem] leading-tight font-thin text-[#ffffffd2]'>{data?.desc}</p>
+          <p className='text-[0.75rem] tablet:text-[0.8rem] tablet-lg:text-[0.85rem] leading-none tracking-wide font-light text-[#ffffffd2]'>{data?.desc}</p>
       </div>
         
 
